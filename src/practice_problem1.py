@@ -41,7 +41,7 @@ def main():
     ###########################################################################
 
     # run_test_init()
-    # run_test_append_string()
+    run_test_append_string()
     # run_test_double()
     # run_test_shrink()
     # run_test_double_then_shrink()
@@ -103,8 +103,12 @@ class Box(object):
         #    DIFFICULTY:      3
         #    TIME ESTIMATE:   5 minutes.
         # ---------------------------------------------------------------------
-        self.contents = contents
         self.volume = volume
+        if len(contents) <= volume:
+            self.contents = contents
+        else:
+            self.contents = ''
+
 
     def append_string(self, additional_contents):
         """
@@ -160,7 +164,17 @@ class Box(object):
         #       Read_this_ONLY_when_asked_Part_2.txt
         #    and complete your work on the problem.
         # ---------------------------------------------------------------------
-
+        rest =''
+        newcontent = self.contents+additional_contents
+        if self.volume >= len(self.contents)+len(additional_contents):
+            self.contents = self.contents + additional_contents
+            return ''
+        else:
+            for k in range(len(additional_contents)+len(self.contents)-self.volume-1):
+                self.contents = self.contents + additional_contents[k]
+            for h in range(self.volume, len(newcontent)):
+                rest = rest + newcontent[h]
+        return rest
     def double(self):
         """
         What comes in:
