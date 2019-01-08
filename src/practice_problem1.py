@@ -45,8 +45,8 @@ def main():
     # run_test_double()
     # run_test_shrink()
     # run_test_double_then_shrink()
-    run_test_reset()
-    # run_test_steal()
+    # run_test_reset()
+    run_test_steal()
     # run_test_get_history()
     # run_test_combined_box()
 
@@ -416,6 +416,17 @@ class Box(object):
         # FOR FULL CREDIT, YOUR SOLUTION MUST BE NO MORE THAN
         #    ** TWO **   LINES OF CODE.
         #######################################################################
+        contents = other_box.contents
+        newcontents = self.contents + other_box.contents
+        if len(self.contents)+other_box.volume < self.volume:
+            self.contents = self.contents + other_box.contents
+            other_box.contents = ''
+        else:
+            for k in range(self.volume-len(self.contents)):
+                self.contents = self.contents + other_box.contents[k]
+            other_box.contents = ''
+            for k in range(self.volume, len(newcontents)):
+                other_box.contents = other_box.contents+newcontents[k]
 
     def get_history(self):
         """
