@@ -271,7 +271,7 @@ class Box(object):
           :type new_volume: int
         """
         # ---------------------------------------------------------------------
-        # TODO: 5. Implement and test this function.
+        # DONE: 5. Implement and test this function.
         #     The testing code is already written for you (above).
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -284,12 +284,11 @@ class Box(object):
         # ---------------------------------------------------------------------
         rest = ''
         contents = self.contents
+        self.volume = new_volume
         if len(self.contents) < new_volume:
             self.contents = contents
-            self.volume = new_volume
             return ''
         else:
-            self.volume = new_volume
             self.contents = ''
             for k in range(new_volume):
                 self.contents = self.contents + contents[k]
