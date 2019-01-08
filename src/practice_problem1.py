@@ -41,8 +41,8 @@ def main():
     ###########################################################################
 
     # run_test_init()
-    run_test_append_string()
-    # run_test_double()
+    # run_test_append_string()
+    run_test_double()
     # run_test_shrink()
     # run_test_double_then_shrink()
     # run_test_reset()
@@ -222,6 +222,17 @@ class Box(object):
         # FOR FULL CREDIT, YOUR SOLUTION MUST BE NO MORE THAN
         #    ** TWO **   LINES OF CODE.
         #######################################################################
+        rest = ''
+        newcontent = 2 * self.contents
+        if 2*len(self.contents) < self.volume:
+            self.contents = newcontent
+        else:
+            for k in range(self.volume-len(self.contents)):
+                self.contents = self.contents + self.contents[k]
+            for k in range(self.volume, len(newcontent)):
+                rest = rest + newcontent[k]
+        return rest
+
 
     def shrink(self, new_volume):
         """
