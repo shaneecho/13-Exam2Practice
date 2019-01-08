@@ -42,8 +42,8 @@ def main():
 
     # run_test_init()
     # run_test_append_string()
-    run_test_double()
-    # run_test_shrink()
+    # run_test_double()
+    run_test_shrink()
     # run_test_double_then_shrink()
     # run_test_reset()
     # run_test_steal()
@@ -210,7 +210,7 @@ class Box(object):
           #                       contents that did NOT fit]
         """
         # ---------------------------------------------------------------------
-        # TODO: 4. Implement and test this function.
+        # DONE: 4. Implement and test this function.
         #     The testing code is already written for you (above).
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -226,6 +226,7 @@ class Box(object):
         newcontent = 2 * self.contents
         if 2*len(self.contents) < self.volume:
             self.contents = newcontent
+            return ''
         else:
             for k in range(self.volume-len(self.contents)):
                 self.contents = self.contents + self.contents[k]
@@ -281,6 +282,20 @@ class Box(object):
         # IMPORTANT: Write a solution to this problem in pseudo-code,
         # and THEN translate the pseudo-code to a solution.
         # ---------------------------------------------------------------------
+        rest = ''
+        contents = self.contents
+        if len(self.contents) < new_volume:
+            self.contents = contents
+            self.volume = new_volume
+            return ''
+        else:
+            self.volume = new_volume
+            self.contents = ''
+            for k in range(new_volume):
+                self.contents = self.contents + contents[k]
+            for h in range(new_volume, len(contents)):
+                rest = rest + contents[h]
+        return rest
 
     def double_then_shrink(self, new_volume):
         """
