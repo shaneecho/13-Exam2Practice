@@ -340,7 +340,7 @@ class Box(object):
           :type new_volume: int
         """
         # ---------------------------------------------------------------------
-        # TODO: 6. Implement and test this function.
+        # DONE: 6. Implement and test this function.
         #     The testing code is already written for you (above).
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -348,8 +348,20 @@ class Box(object):
         #    DIFFICULTY:      5
         #    TIME ESTIMATE:   5 minutes.
         # ---------------------------------------------------------------------
+        lenth = len(self.contents)
+        volume = self.volume
         self.double()
         self.shrink(new_volume)
+        if 2*lenth <= volume:
+            if 2*lenth <= new_volume:
+                return 0
+            else:
+                return 2*lenth-new_volume
+        else:
+            if 2*lenth <= new_volume:
+                return 2*lenth-volume
+            else:
+                return 2*lenth-new_volume
 
     def reset(self):
         """
