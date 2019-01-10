@@ -32,8 +32,8 @@ import time
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_practice_problem2a()
-    # run_test_practice_problem2b()
+    # run_test_practice_problem2a()
+    run_test_practice_problem2b()
 
 ###############################################################################
 # Students: Some of the testing code below uses a simple testing framework.
@@ -112,7 +112,7 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     WRITE THE TESTS FIRST (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -224,14 +224,23 @@ def practice_problem2b(sequence):
       :type sequence: [str]
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
-
+    content = ''
+    i = 0
+    while (i<len(sequence)):
+        a = sequence[i]
+        if sequence[i] == '':
+            content = content
+        else:
+            content = content + a[0]
+        i = i + 1
+    return content
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
