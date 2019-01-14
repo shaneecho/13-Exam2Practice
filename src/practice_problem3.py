@@ -35,9 +35,9 @@ import rosegraphics as rg
 def main():
     """ Calls the   TEST   functions in this module. """
     # run_test_practice_problem3a()
-    run_test_practice_problem3b()
+    #run_test_practice_problem3b()
     # run_test_practice_problem3c()
-    # run_test_practice_problem3d()
+    run_test_practice_problem3d()
     # run_test_practice_problem3e()
 
 
@@ -348,7 +348,7 @@ def practice_problem3b(sequence):
       :type: sequence: list    or tuple or string
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:  You are NOT allowed to use the
@@ -633,7 +633,7 @@ def practice_problem3d(sequence):
     #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ###########################################################################
-    practice_problem3c(sequence)[0]
+    practice_problem3c(sequence)
 
 def run_test_practice_problem3e():
     """ Tests the    practice_problem3e    function. """
