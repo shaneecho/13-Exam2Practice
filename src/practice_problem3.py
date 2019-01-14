@@ -633,8 +633,6 @@ def practice_problem3d(sequence):
     #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ###########################################################################
-    practice_problem3c(sequence)
-
 def run_test_practice_problem3e():
     """ Tests the    practice_problem3e    function. """
     print()
