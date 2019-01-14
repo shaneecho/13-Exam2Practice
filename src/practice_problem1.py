@@ -41,14 +41,14 @@ def main():
     ###########################################################################
 
     # run_test_init()
-    # run_test_append_string()
+    #run_test_append_string()
     # run_test_double()
     # run_test_shrink()
     # run_test_double_then_shrink()
     # run_test_reset()
     # run_test_steal()
     # run_test_get_history()
-    run_test_combined_box()
+    # run_test_combined_box()
 
 
 ###############################################################################
@@ -171,7 +171,7 @@ class Box(object):
             self.contents = self.contents + additional_contents
             return ''
         else:
-            for k in range(len(additional_contents)+len(self.contents)-self.volume-1):
+            for k in range(self.volume-len(self.contents)):
                 self.contents = self.contents + additional_contents[k]
             for h in range(self.volume, len(newcontent)):
                 rest = rest + newcontent[h]
@@ -223,18 +223,8 @@ class Box(object):
         # FOR FULL CREDIT, YOUR SOLUTION MUST BE NO MORE THAN
         #    ** TWO **   LINES OF CODE.
         #######################################################################
-        rest = ''
-        newcontent = 2 * self.contents
-        if 2*len(self.contents) < self.volume:
-            self.contents = newcontent
-            return ''
-        else:
-            for k in range(self.volume-len(self.contents)):
-                self.contents = self.contents + self.contents[k]
-            for k in range(self.volume, len(newcontent)):
-                rest = rest + newcontent[k]
-        return rest
-
+        a = self.append_string(self.contents)
+        return a
 
     def shrink(self, new_volume):
         """
