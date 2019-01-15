@@ -32,8 +32,8 @@ import time
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_practice_problem2a()
-    # run_test_practice_problem2b()
+    # run_test_practice_problem2a()
+    run_test_practice_problem2b()
 
 ###############################################################################
 # Students: Some of the testing code below uses a simple testing framework.
